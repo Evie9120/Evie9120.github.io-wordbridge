@@ -1,0 +1,340 @@
+* { 
+    box-sizing: border-box; 
+    font-family: system-ui, -apple-system, sans-serif; 
+}
+
+body { 
+    background: #1a1a2e; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0; 
+}
+
+.container { 
+    background: #2d2d44; 
+    padding: 2rem; 
+    border-radius: 2rem; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); 
+    text-align: center; 
+    width: 600px; 
+    max-width: 95%; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Top Controls (Sound & Pause) */
+.top-controls { 
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 0.8rem; 
+    margin-bottom: -1.5rem; 
+    position: relative; 
+    z-index: 10; 
+}
+
+.icon-btn { 
+    background: #3d3d5c; 
+    border: none; 
+    font-size: 1.2rem; 
+    cursor: pointer; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: 0.2s; 
+    padding: 0; 
+}
+
+.icon-btn:hover { 
+    background: #5a5a7a; 
+    transform: scale(1.1); 
+}
+
+h1 { 
+    color: #f5e9d8; 
+    letter-spacing: 2px; 
+    margin-top: 0; 
+}
+
+.bridge-header { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 1rem; 
+    margin: 1rem 0; 
+}
+
+.word-box { 
+    background: #1a1a2e; 
+    padding: 0.8rem 1.5rem; 
+    border-radius: 1rem; 
+    flex: 1; 
+}
+
+.word-box .label { 
+    color: #b8a9c9; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.word-box .word { 
+    color: #f5e9d8; 
+    font-size: 2rem; 
+    font-weight: bold; 
+    margin-top: 0.2rem; 
+}
+
+.bridge-chain { 
+    background: #1a1a2e; 
+    padding: 1rem; 
+    border-radius: 1rem; 
+    margin: 1rem 0; 
+    min-height: 60px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 0.3rem 0.6rem; 
+}
+
+.bridge-word { 
+    background: #3d3d5c; 
+    color: #f5e9d8; 
+    padding: 0.3rem 0.8rem; 
+    border-radius: 0.6rem; 
+    font-weight: bold; 
+}
+
+.bridge-arrow { 
+    color: #7ddfb3; 
+    font-size: 1.2rem; 
+}
+
+.input-area { 
+    display: flex; 
+    gap: 0.5rem; 
+    margin: 1rem 0; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.input-area input { 
+    flex: 1; 
+    min-width: 150px; 
+    padding: 0.8rem 1rem; 
+    border: none; 
+    border-radius: 2rem; 
+    font-size: 1rem; 
+    background: #1a1a2e; 
+    color: #f5e9d8; 
+}
+
+.input-area input:focus { 
+    outline: 2px solid #7ddfb3; 
+}
+
+.input-area button { 
+    background: #7ddfb3; 
+    color: #1e1e2f; 
+    border: none; 
+    padding: 0.8rem 1.8rem; 
+    border-radius: 2rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.input-area button:hover { 
+    background: #9be8c7; 
+    transform: scale(1.03); 
+}
+
+.status { 
+    color: #f5e9d8; 
+    font-size: 1rem; 
+    margin: 0.5rem 0; 
+    min-height: 2rem; 
+}
+
+.status.success { 
+    color: #7ddfb3; 
+}
+
+.status.error { 
+    color: #e07c5c; 
+}
+
+.status.info { 
+    color: #f5e9d8; 
+}
+
+.score-display { 
+    color: #b8a9c9; 
+    margin-top: 1rem; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    background: #1a1a2e; 
+    padding: 0.5rem; 
+    border-radius: 1rem; 
+}
+
+.score-display span { 
+    color: #7ddfb3; 
+}
+
+.btn-group { 
+    display: flex; 
+    gap: 0.8rem; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin-top: 1rem; 
+}
+
+.btn { 
+    background: #3d3d5c; 
+    color: #f5e9d8; 
+    border: none; 
+    padding: 0.6rem 1.6rem; 
+    border-radius: 2rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.btn:hover { 
+    background: #5a5a7a; 
+    transform: scale(1.03); 
+}
+
+.btn-primary { 
+    background: #7ddfb3; 
+    color: #1e1e2f; 
+}
+
+.btn-primary:hover { 
+    background: #9be8c7; 
+}
+
+.hidden { 
+    display: none !important; 
+}
+
+.intro-text { 
+    color: #b8a9c9; 
+    margin: 1rem 0; 
+}
+
+.instructions { 
+    background: #1a1a2e; 
+    color: #f5e9d8; 
+    border-radius: 1rem; 
+    padding: 1rem; 
+    text-align: left; 
+    margin: 1rem 0; 
+}
+
+.instructions h2 { 
+    margin-top: 0; 
+    font-size: 1rem; 
+}
+
+.instructions ol { 
+    margin: 0; 
+    padding-left: 1.2rem; 
+}
+
+/* Main Menu Best Score */
+.home-best-score { 
+    background: #7ddfb3; 
+    color: #1e1e2f; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    padding: 0.8rem; 
+    border-radius: 1rem; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Hard Mode Restriction Banner */
+.restriction-banner { 
+    background: #e07c5c; 
+    color: #1e1e2f; 
+    padding: 0.6rem 1rem; 
+    border-radius: 1rem; 
+    font-weight: bold; 
+    margin: 0.8rem 0; 
+    font-size: 0.95rem; 
+}
+
+.restriction-banner span { 
+    background: #1e1e2f; 
+    color: #f5e9d8; 
+    padding: 0.1rem 0.5rem; 
+    border-radius: 0.4rem; 
+    font-size: 1.1rem; 
+    margin-left: 0.3rem; 
+}
+
+.setup-group { 
+    margin: 1.5rem 0; 
+    text-align: left; 
+}
+
+.setup-group label { 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    color: #b8a9c9; 
+    font-weight: bold; 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.setup-group select { 
+    width: 100%; 
+    padding: 0.8rem 1rem; 
+    border-radius: 2rem; 
+    border: none; 
+    background: #1a1a2e; 
+    color: #f5e9d8; 
+    font-size: 1rem; 
+    outline: none; 
+}
+
+.setup-group select:focus { 
+    outline: 2px solid #7ddfb3; 
+}
+
+/* Pause Overlay */
+.pause-overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(26, 26, 46, 0.85); 
+    backdrop-filter: blur(8px); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 100; 
+    border-radius: inherit; 
+}
+
+.pause-box { 
+    background: #2d2d44; 
+    padding: 2.5rem; 
+    border-radius: 2rem; 
+    border: 2px solid #7ddfb3; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; 
+    width: 80%; 
+}
+
+.pause-box h2 { 
+    margin-top: 0; 
+    color: #f5e9d8; 
+    letter-spacing: 1px; 
+}
