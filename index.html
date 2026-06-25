@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Bridge</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container" id="app">
+
+        <div id="homeScreen">
+            <div class="top-controls">
+                <button class="icon-btn" id="homeSoundBtn" title="Toggle Sound">🔊</button>
+            </div>
+            <h1>🌉 WORD BRIDGE</h1>
+            <p class="intro-text">Connect words by meaning to safely reach your target destination.</p>
+
+            <div class="instructions">
+                <h2>How to Play</h2>
+                <ol>
+                    <li>You are given a <strong>Start</strong> word and a <strong>Target</strong> word.</li>
+                    <li>Type a word that is <strong>related in meaning</strong> to the current terminal word.</li>
+                    <li>If the AI validates your link, your bridge expands.</li>
+                    <li>Reach the target word in as <strong>few steps</strong> as possible to earn more points!</li>
+                </ol>
+            </div>
+
+            <div id="homeBestScoreEl" class="home-best-score hidden">
+                🏆 Best Score: 0
+            </div>
+
+            <div class="setup-group">
+                <label for="difficultySelect">Select Game Difficulty</label>
+                <select id="difficultySelect">
+                    <option value="normal">Normal Mode</option>
+                    <option value="hard">Hard Mode (Random Letter Restriction)</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary" id="startGameBtn">Start Game</button>
+        </div>
+
+        <div id="gameScreen" class="hidden">
+            <div class="top-controls">
+                <button class="icon-btn" id="gameSoundBtn" title="Toggle Sound">🔊</button>
+                <button class="icon-btn" id="pauseBtn" title="Pause Game">⏸️</button>
+            </div>
+
+            <h1>🌉 WORD BRIDGE</h1>
+
+            <div class="bridge-header">
+                <div class="word-box">
+                    <div class="label">Start</div>
+                    <div class="word" id="startWord">—</div>
+                </div>
+                <div class="word-box">
+                    <div class="label">Target</div>
+                    <div class="word" id="targetWord">—</div>
+                </div>
+            </div>
+
+            <div id="restrictionDisplay" class="restriction-banner hidden">
+                ⚠️ HARD MODE CONSTRAINT: Every bridged word must contain the letter: <span
+                    id="requiredLetterEl">-</span>
+            </div>
+
+            <div class="bridge-chain" id="bridgeChain">
+                <span class="bridge-word" id="currentDisplay">—</span>
+            </div>
+
+            <div class="input-area" id="inputContainer">
+                <input type="text" id="guessInput" placeholder="Type a related word..." autocomplete="off" autofocus />
+                <button id="submitGuess">Bridge</button>
+            </div>
+
+            <div class="status" id="statusMessage">Type a word to start bridging!</div>
+
+            <div class="score-display">
+                Total Score: <span id="totalScoreEl">0</span> &nbsp;|&nbsp; Current Steps: <span id="stepCount">0</span>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary hidden" id="nextBtn">⏭️ Next Round</button>
+                <button class="btn" id="hintBtn">💡 Hint</button>
+            </div>
+        </div>
+
+        <div id="pauseOverlay" class="pause-overlay hidden">
+            <div class="pause-box">
+                <h2>Game Paused</h2>
+                <button class="btn btn-primary" id="resumeBtn">▶️ Resume</button>
+                <button class="btn" id="returnMenuBtn">🏠 Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
